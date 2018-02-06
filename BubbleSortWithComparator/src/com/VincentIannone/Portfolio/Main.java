@@ -24,6 +24,28 @@ public class Main {
 		for (Integer i : list) {
 		      System.out.println(i);
 		}
+		/*
+		 * OUTPUT:
+		 * -4562
+		 * -54
+		 * -35
+		 * 1
+		 * 3
+		 * 3
+		 * 4
+		 * 6
+		 * 6
+		 * 7
+		 * 7
+		 * 46
+		 * 47
+		 * 726763
+		 */
+		System.out.println(BinarySearch(list, c, 3));
+		/*
+		 * OUTPUT:
+		 * 4
+		 */
 	}
 	
 	static <T> void BubbleSort(List<T> list, Comparator<? super T> c) {
@@ -38,6 +60,26 @@ public class Main {
 			}
 		}
 	}
+	static <T> int BinarySearch(List<T> sortedList, Comparator<? super T> comparator, T element) {
+		int min = 0;
+		int pivot = (int) (sortedList.size() - 1)/ 2;
+		int max = sortedList.size() - 1;
+		while(true) {
+			if(max - min == 1) {
+				return -1;
+			}
+			if(comparator.compare(element, sortedList.get(pivot)) < 0){
+				max = pivot;
+				pivot = (int)  (max + min) / 2;
+			}else if (comparator.compare(element, sortedList.get(pivot)) > 0) {
+				min = pivot;
+				pivot = (int)  (max + min) / 2;
+			}else {
+				return pivot;
+			}
+		}
+	}
+	
 	static <T> void Swap(List<T> list, int a, int b) {
 		T temp = list.set(a,  list.get(b));
 		list.set(b, temp);
