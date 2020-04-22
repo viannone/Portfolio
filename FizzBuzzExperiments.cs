@@ -1,14 +1,21 @@
 ﻿using System;
-
+/* This program was a fun way to introduce someone new at programming to different programming paradigms.
+* Here, there are two different ways to output the classic children's game "Fizz-Buzz".
+* The first way uses only pure functions with no state
+* The second way is not only stateless, but uses no assignment operators either
+*/
 namespace FunctionalFizzBuzz
 {
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
+			//Version 1
 			FunctionalFizzBuzz (1, 100, "Functional");
+			//Version 2
 			IfLessAssignmentLessFizzBuzz (1, 100, "Functional, No If's, Ands, or Buts");
 		}
+		
 		public static void FunctionalFizzBuzz(int current, int max, string thusFar)
 		{
 			if (current > max) {
@@ -23,39 +30,9 @@ namespace FunctionalFizzBuzz
 				FunctionalFizzBuzz (current + 1, max, thusFar + "\n" + current);
 			}
 		}
-
-
-
-
-
-		/*
-		 * 
-		 * Here Be Dragons
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * Spoilers Below
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * */
-
+		
+		//the bottom one is a little trickier to follow, because it uses arrays and indexes as opposed to if-statements
+		//note the heavy use of lambda expressions - this would not be necessary in a language like Javascript where functions are first-order variables
 		//format ({option 1, option 2}, condition)
 
 		public static void IfLessAssignmentLessFizzBuzz(int current, int max, string thusFar)
