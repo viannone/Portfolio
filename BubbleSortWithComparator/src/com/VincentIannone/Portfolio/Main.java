@@ -7,7 +7,6 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ArrayList<Integer> list = new ArrayList<>(Arrays.asList(3, 6, 1, 6, 7, 4, 7, 3, 47, 726763, 2, -35, 46, -4562, -54));
 		Comparator c = new Comparator<Integer>() {
 			public int compare(Integer o1, Integer o2) {
